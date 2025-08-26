@@ -62,8 +62,8 @@ if crontab -l >/dev/null 2>&1; then
 fi
 
 # Append the new cron job entries
-echo "0 */5 * * * /home/ubuntu/venv/cgit/bin/crowd-git-ingest >> /data/repos/log/cron.log 2>&1" >>tmp-cron
-echo "0 0 * * * /home/ubuntu/venv/cgit/bin/crowd-git-maintainers >> /data/repos/log/maintainers.log 2>&1" >>tmp-cron
+echo "0 0 * * * /home/ubuntu/venv/cgit/bin/crowd-git-ingest >> /data/repos/log/cron.log 2>&1" >>tmp-cron
+echo "0 12 * * * /home/ubuntu/venv/cgit/bin/crowd-git-maintainers >> /data/repos/log/maintainers.log 2>&1" >>tmp-cron
 
 # Install the new crontab
 crontab tmp-cron
