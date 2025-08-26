@@ -500,8 +500,6 @@ def get_new_commits(remote: str, repos_dir: str = REPOS_DIR, verbose: bool = Fal
     if not os.path.exists(repo_path):
         # Clone the repo if it doesn't exist
         logger.info("Repo %s not existing locally", repo_path)
-        logger.warning(f"Skipping repository cloning for {remote}, repo_path: {repo_path}, repos_dir: {repos_dir}")
-        return [] # TODO: remove this once re-cloning issue is fixed
         result = clone_repo(remote, repos_dir)
         if result == 1:
             return []
